@@ -1,0 +1,60 @@
+/*
+MIXINS
+*/
+
+// Image Replacement
+@mixin ir {
+  // display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  line-height: 0;
+  br { display: none; }
+}
+
+
+// Simple Gradient
+@mixin simple-gradient($direction: to bottom, $start: #ffffff, $end: #000000) {
+ background-image: linear-gradient($direction, $start, $end);
+}
+
+// Basic small-screen media query
+$bp-small: 768px;
+
+@mixin media-small {
+  @media only screen and (max-width: $bp-small), only screen and (max-device-width: $bp-small) {
+    @content;
+  }
+}
+
+// Type: custom link underline
+@mixin text-link($color: $black, $visible: true) {
+  padding-bottom: 2px;
+
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+
+  @if $visible == true {
+    border-bottom-color: fade-out($color, .6);
+    &:hover { border-bottom-color: fade-out($color, 0); }
+  }
+
+  @if $visible == false {
+    border-bottom-color: fade-out($color, 1);
+    &:hover { border-bottom-color: fade-out($color, .5); }
+  }
+
+  background-color: transparent;
+
+  transition: border-bottom-color, .16s;
+}

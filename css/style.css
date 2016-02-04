@@ -1,0 +1,66 @@
+/*
+Imports
+*/
+/*
+MIXINS
+*/
+/*
+COLOURS
+*/
+/*
+Z-INDEX
+*/
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl,
+dt, dd, blockquote, address {
+  margin: 0;
+  padding: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/*
+Debug styles
+*/
+/*
+Body
+*/
+body {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #d9d9d9;
+  background-color: #000000; }
+
+/*
+Layout
+*/
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; }
+
+.waveform {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 80%; }
+
+/*
+Waveform nodes
+*/
+.waveform__node {
+  width: 1px;
+  background-color: #d9d9d9; }
+
+/*# sourceMappingURL=style.css.map */

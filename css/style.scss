@@ -1,0 +1,63 @@
+/*
+Imports
+*/
+@import 'core';
+
+/*
+Debug styles
+*/
+// * { background-color: rgba(255,0,0,.2); }
+// * * { background-color: rgba(0,255,0,.2); }
+// * * * { background-color: rgba(0,0,255,.2); }
+// * * * * { background-color: rgba(255,0,255,.2); }
+// * * * * * { background-color: rgba(0,255,255,.2); }
+// * * * * * * { background-color: rgba(255,255,0,.2); }
+
+
+
+/*
+Body
+*/
+body {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+
+  color: $white;
+  background-color: $black;
+}
+//
+// ::-moz-selection { background-color: $pink; color: #fff; text-shadow: none; }
+// ::selection { background-color: $pink; color: #fff; text-shadow: none; }
+//
+/*
+Layout
+*/
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.waveform {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 90%;
+  height: 80%;
+}
+
+
+
+/*
+Waveform nodes
+*/
+.waveform__node {
+  width: 1px;
+  background-color: $white;
+}
