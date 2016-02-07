@@ -61,6 +61,8 @@ Waveform nodes
   width: 2px;
   background-color: $white;
 
+  // box-shadow: 0 0 10px $white;
+
   transition: height 2s ease-in-out;
 
   animation-duration: 1s;
@@ -69,16 +71,24 @@ Waveform nodes
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 
-  &:nth-child(2n+1) {
+  &:nth-child(7n+1) {
     animation-duration: 10s;
   }
 
   &:nth-child(3n+1) {
-    animation-duration: 9.8s;
+    animation-duration: 15s;
   }
 
   &:nth-child(4n+1) {
-    animation-duration: 10.2s;
+    animation-duration: 20s;
+  }
+
+  &:nth-child(5n+1) {
+    animation-duration: 25s;
+  }
+
+  &:nth-child(6n+1) {
+    animation-duration: 30s;
   }
 
   &:nth-child(odd) {
@@ -88,6 +98,14 @@ Waveform nodes
   &:nth-child(even) {
     animation-name: pulseup;
   }
+
+  &:nth-child(7n+1) {
+    animation-name: pulseupdown;
+  }
+
+  &:nth-child(13n+1) {
+    animation-name: pulseupdown;
+  }
 }
 
 @-webkit-keyframes pulsedown {
@@ -96,7 +114,7 @@ Waveform nodes
   }
 
   to {
-    transform: scaleY(0.9) translateX(2px);
+    transform: scaleY(0.9) translateX(1px);
   }
 }
 
@@ -107,5 +125,24 @@ Waveform nodes
 
   to {
     transform: scaleY(1.1) translateX(2px);
+  }
+}
+
+
+@-webkit-keyframes pulseupdown {
+  0% {
+    transform: scaleY(1) translateX();
+  }
+
+  33% {
+    transform: scaleY(1.1) translateX(1px);
+  }
+
+  33% {
+    transform: scaleY(0.9) translateX(-1px);
+  }
+
+  100% {
+    transform: scaleY(1) translateX(0);
   }
 }
