@@ -88,7 +88,7 @@ function generateColour(base) {
     h = $.Color(base).hue()
 
     // set variation amount
-    max = 40
+    max = 20
     min = 0 - max
 
     // generate a random
@@ -124,7 +124,6 @@ function renderWaveform(selector, resolution, dynamics) {
 
   // generate a base colour
   window.baseColour = generateColour()
-  //console.log(baseHue)
 
   // fail if no selector
   if (typeof selector == 'undefined') return false
@@ -140,6 +139,9 @@ function renderWaveform(selector, resolution, dynamics) {
 
     // generate a new colour variation for this node
     thisColour = generateColour(window.baseColour)
+
+    // use this colour as base for next
+    window.baseColour = thisColour
 
     //console.log(color.toRgbaString() )
     $w.css({'background-color': thisColour })
