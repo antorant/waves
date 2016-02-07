@@ -60,7 +60,7 @@ Layout
 Waveform nodes
 */
 .waveform__node {
-  width: 1px;
+  width: 2px;
   background-color: #d9d9d9;
   transition: height 2s ease-in-out;
   animation-duration: 1s;
