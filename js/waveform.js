@@ -81,12 +81,50 @@ function generateWaveform(resolution, dynamics){
   return wave
 }
 
+function generateColour(base) {
+  // if there's a base colour...
+  if (base) {
+    // get the hue
+    h = $.Color(base).hue()
+
+    // set variation amount
+    max = 40
+    min = 0 - max
+
+    // generate a random
+    d = Math.floor(Math.random() * (max - min + 1)) + min
+
+    // apply random variation to base hue
+    h += d
+
+  } else {
+    // if there's no base colour...
+    // generate a random hue value
+    h = Math.floor(Math.random() * (360 + 1))
+  }
+
+  // make a new colour object
+  newColour = $.Color('#000000')
+
+  // apply the hue
+  newColour = newColour.hsla( h, 1, 0.6, 1 )
+
+  // to hex string
+  newColour = newColour.toHexString()
+
+  return newColour
+}
+
 function renderWaveform(selector, resolution, dynamics) {
   // clear existing
   $(selector).empty()
 
   // get a waveform array
   var wave = generateWaveform(resolution, dynamics)
+
+  // generate a base colour
+  window.baseColour = generateColour()
+  //console.log(baseHue)
 
   // fail if no selector
   if (typeof selector == 'undefined') return false
@@ -99,6 +137,12 @@ function renderWaveform(selector, resolution, dynamics) {
     // jquery element for the node
     $w = $('<div></div>')
     $w.addClass('waveform__node')
+
+    // generate a new colour variation for this node
+    thisColour = generateColour(window.baseColour)
+
+    //console.log(color.toRgbaString() )
+    $w.css({'background-color': thisColour })
 
     // TODO add control for this
     // set individual width based on resolution

@@ -61,6 +61,8 @@ Waveform nodes
   width: 1px;
   background-color: $white;
 
+  transition: height 2s ease-in-out;
+
   animation-duration: 1s;
   animation-name: pulsedown;
   animation-iteration-count: infinite;
