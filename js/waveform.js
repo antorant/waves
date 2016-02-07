@@ -82,6 +82,9 @@ function generateWaveform(resolution, dynamics){
 }
 
 function renderWaveform(selector, resolution, dynamics) {
+  // clear existing
+  $(selector).empty()
+
   // get a waveform array
   var wave = generateWaveform(resolution, dynamics)
 
@@ -148,6 +151,4 @@ function renderWaveform(selector, resolution, dynamics) {
     // insert into dom
     $(selector).append($w)
   }
-
-
 }
