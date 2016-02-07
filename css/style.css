@@ -61,6 +61,32 @@ Waveform nodes
 */
 .waveform__node {
   width: 1px;
-  background-color: #d9d9d9; }
+  background-color: #d9d9d9;
+  animation-duration: 1s;
+  animation-name: pulsedown;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; }
+  .waveform__node:nth-child(2n+1) {
+    animation-duration: 10s; }
+  .waveform__node:nth-child(3n+1) {
+    animation-duration: 9.8s; }
+  .waveform__node:nth-child(4n+1) {
+    animation-duration: 10.2s; }
+  .waveform__node:nth-child(odd) {
+    animation-name: pulsedown; }
+  .waveform__node:nth-child(even) {
+    animation-name: pulseup; }
+
+@-webkit-keyframes pulsedown {
+  from {
+    transform: scaleY(1) translateX(-2px); }
+  to {
+    transform: scaleY(0.9) translateX(2px); } }
+@-webkit-keyframes pulseup {
+  from {
+    transform: scaleY(1) translateX(-1px); }
+  to {
+    transform: scaleY(1.1) translateX(2px); } }
 
 /*# sourceMappingURL=style.css.map */
