@@ -108,3 +108,17 @@ Waveform nodes
     transform: scaleY(1) translateX(0); } }
 
 /*# sourceMappingURL=style.css.map */
+
+.instructions {
+  font-size: 12px;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.instructions code {
+  border: 1px solid white;
+  padding: 4px;
+}
